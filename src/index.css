@@ -1,13 +1,90 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Roboto;
+}
+.container{
+  width: 50%;
+  margin: auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.newUser{
+  background: none;
+  border: none;
+  font-size: large;
+  cursor: pointer;
+}
+
+.newUser:hover{
+  text-shadow: 3px 2px white;
+  text-decoration: underline;
+}
+
+.nav{
+  display: flex;
+  background-color: rgb(193, 195, 197);
+  color: rgb(93, 93, 93);
+  justify-content: space-between;
+  padding: 10px;
+
+}
+
+.nav a{
+  color: inherit;
+  display: flex;
+  text-decoration: none;
+  padding: 5px;
+  height: 100%;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+}
+
+.nav-active{
+  border-bottom: 1px solid black;
+}
+
+.nav li:hover{
+  color: black;
+}
+.container{
+  padding: 15px;
+}
+
+.userContainer{
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.userContainer img{
+  border-radius: 50%;
+  min-width: 50%;
+  cursor: pointer;
+}
+
+.generate{
+  width: 100vh;
+  height: 75vh;
+  margin: auto;
+  background: none;
+  border: 10px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.generate:hover{
+  box-shadow: 5px 10px #888888;
+  
+}
+
+.male{
+  border: 15px solid blue;
+}
+
+.female{
+  border: 15px solid pink;
 }
