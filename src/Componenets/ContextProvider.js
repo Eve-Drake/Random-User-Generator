@@ -14,7 +14,15 @@ export function UserDataProvider({children}){
             setLoaded(true)
         }
         catch(err){
-            console.log(err)
+            
+            if (err.response){
+                //Respnse recieved
+                console.log(err.response.data)
+            }
+            else{
+                //No response
+                console.log(err)
+            }
         }
     }
 
