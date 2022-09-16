@@ -5,22 +5,23 @@ const UserDataContext = createContext();
 
 export function UserDataProvider({children}){
     const [userData, setUserData] = useState([]);
-    const [generate, setGenerate] = useState(true)
+    const [loaded, setLoaded] = useState(false)
 
     const getUserData = async () =>{
-        setGenerate(false)
         await axios.get('https://randomuser.me/api/')
         .then(resp=>{
             setUserData(resp.data.results[0])
+            setLoaded(true)
         })
         .catch(err =>{
             console.log(err)
         })
     }
+
     
 
 return(
-        <UserDataContext.Provider value={{userData, getUserData, generate}}>{children}</UserDataContext.Provider>
+        <UserDataContext.Provider value={{userData, getUserData, loaded}}>{children}</UserDataContext.Provider>
     )
     }
 

@@ -23,7 +23,7 @@
 
 .nav{
   display: flex;
-  background-color: rgb(193, 195, 197);
+  border-bottom: 2px solid  rgb(193, 195, 197);
   color: rgb(93, 93, 93);
   justify-content: space-between;
   padding: 10px;
@@ -50,9 +50,7 @@ nav ul{
 .nav li:hover{
   color: black;
 }
-.container{
-  padding: 15px;
-}
+
 
 .userContainer{
   padding: 15px;
@@ -62,23 +60,22 @@ nav ul{
 
 .userContainer img{
   border-radius: 50%;
-  min-width: 50%;
+  min-width: 20%;
   cursor: pointer;
 }
 
 .generate{
-  width: 100vh;
-  height: 75vh;
+  width: 40vh;
+  height: 40vh;
   margin: auto;
   background: none;
   border: 10px solid black;
-  border-radius: 15px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
 .generate:hover{
-  box-shadow: 5px 10px #888888;
-  
+  box-shadow: 3px 10px #888888;
 }
 
 .male{
@@ -88,3 +85,37 @@ nav ul{
 .female{
   border: 15px solid pink;
 }
+
+.contactContainer{
+  padding: 50px;
+  margin:auto;
+  display: flex;
+  width: 50%;
+}
+
+.item{
+  padding: 5px;
+  border: 3px solid black;
+  margin: 5px;
+  border-radius: 15px;
+  width: 25vw;
+  height: 50vh;
+  align-items: center;
+}
+
+.item:hover{
+  box-shadow: 5px 10px #888888;
+}
+
+h3, p{
+  padding: 5px;
+}
+
+.password{
+  background-color: black;
+}
+.password:hover{
+  background-color: white;
+}
+
+

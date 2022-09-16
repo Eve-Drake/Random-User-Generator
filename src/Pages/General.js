@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useContext } from 'react';
 import UserDataContext from '../Componenets/ContextProvider';
+import GenerateButton from '../Utilities/GenerateButton';
 
 
 const General = () => {
-  const {userData, getUserData, generate} = useContext(UserDataContext);
-
-  const handleClick = () =>{
-    getUserData();
-  }
+  const {userData, getUserData, loaded} = useContext(UserDataContext);
   return (
-    <div className='container'>
-        {generate && <button className='generate' onClick={handleClick}>Generate User</button>}
-        <div className='userContainer'>
-          <img className={userData.gender} src={userData.picture?.large} onClick={handleClick}></img>
+    <div className='userContainer'>
+        <GenerateButton />
+        {loaded && <div >
+          <img className={userData.gender} src={userData.picture?.large} onClick={getUserData} alt='User Generated Through An API'></img>
           <h1>{userData.name?.first} {userData.name?.last}</h1>
-        </div>
-        
+          <p>Date of Birth: {userData.dob?.date.slice(0, 10)}</p>
+          <p>Age: {userData.dob?.age}</p>
+        </div>}
     </div>
   )
 }
