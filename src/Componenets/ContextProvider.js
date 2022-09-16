@@ -8,14 +8,14 @@ export function UserDataProvider({children}){
     const [loaded, setLoaded] = useState(false)
 
     const getUserData = async () =>{
-        await axios.get('https://randomuser.me/api/')
-        .then(resp=>{
-            setUserData(resp.data.results[0])
+        try{
+            const response = await axios.get('https://randomuser.me/api/')
+            setUserData(response.data.results[0]);
             setLoaded(true)
-        })
-        .catch(err =>{
+        }
+        catch(err){
             console.log(err)
-        })
+        }
     }
 
     
